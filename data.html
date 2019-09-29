@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title> WRISTBAND NIG </title>
+
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script> -->
+	<!-- <script src="asset/js/jquery.dataTables.min.js"></script>
+	<script src="asset/js/angular-datatables.min.js"></script> -->
+	<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+	<!-- <style>
+		body{
+			background: grey no-repeat fixed center;
+			background-size: cover;
+		}
+	</style> -->
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<!-- Bootstrap core CSS -->
+	<link href="asset/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="asset/css/mdb.min.css" rel="stylesheet">
+	<!-- Your custom styles (optional) -->
+	<link href="asset/css/style.min.css" rel="stylesheet">
+
+  <link href="assets2/2/datatables.min.css" rel="stylesheet">
+
+  <!-- <link href="assets2/2/DataTables-1.10.18/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="assets2/2/Buttons-1.5.6/css/buttons.dataTables.min.css" rel="stylesheet">
+
+    <script src="assets2/2/DataTables-1.10.18/js/jquery.dataTables.min.js"></script>
+  	<script src="assets2/2/JSZip-2.5.0/jszip.min.js"></script>
+    <link href="assets2/2/datatables.min.css" rel="stylesheet">
+	<script src="assets2/2/pdfmake-0.1.36/pdfmake.min.js"></script>
+	<script src="assets2/2/pdfmake-0.1.36/vfs_fonts.js"></script>
+  	<script src="assets2/2/datatables.min.js"></script> -->
+
+  	<!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
+  	<!-- <link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/w/bs4/jqc-1.12.4/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/fc-3.2.5/fh-3.1.4/r-2.2.2/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.css"/> -->
+
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script> -->
+<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script> -->
+<!-- <script type="text/javascript" src="https://cdn.datatables.net/w/bs4/jqc-1.12.4/jszip-2.5.0/dt-1.10.18/af-2.3.3/b-1.5.6/b-flash-1.5.6/b-html5-1.5.6/b-print-1.5.6/fc-3.2.5/fh-3.1.4/r-2.2.2/rr-1.2.4/sc-2.0.0/sl-1.3.0/datatables.min.js"></script> -->
+
+  <!-- SCRIPTS -->
+	<!-- JQuery -->
+	<script type="text/javascript" src="asset/js/jquery-3.3.1.min.js"></script>
+  <script src="assets2/2/datatables.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<!-- <script type="text/javascript" src="asset/js/popper.min.js"></script> -->
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="asset/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<!-- <script type="text/javascript" src="asset/js/mdb.min.js"></script> -->
+	<!-- Initializations -->
+
+  <style>
+         .dataTables_length {
+             margin-bottom: 30px;
+         }
+
+         .dataTables_length select {
+             border: 1px solid #e4e4e4;
+         }
+
+         .dt-buttons a {
+             margin-left: 12px;
+             font-size: 12px;
+             padding: 6px;
+             border: 1px solid #e4e4e4;
+             background: #FFF;
+             box-shadow: 0px 0px 14px 0px #ececec;
+         }
+
+         .dataTables_filter input {
+             border: 1px solid #e4e4e4;
+         }
+
+         .table-striped tbody tr {
+             line-height: 30px;
+         }
+     </style>
+</head>
+<body ng-app="crudApp" ng-controller="crudController">
+	<!--Main layout-->
+
+	<main class="">
+			<div class="container">
+        <hr class="my-5">
+
+        <!--Section: Cards-->
+        <section class="text-center">
+
+            <!--Grid row-->
+            <div class="row mb-4 wow fadeIn">
+
+                <!--Grid column-->
+                <!-- <div class="col-lg-4 col-md-12 mb-4">
+
+                </div> -->
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <!-- <div class="col-lg-4 col-md-6 mb-4">
+
+
+                </div> -->
+                <!--Grid column-->
+
+                <!--Grid column-->
+                <div class="col-lg-12 col-md-8 mb-8" ng-init="fetchData()">
+	<div class="table-responsive" style="overflow-x: unset;">
+                  <table   id="user_info"    class="table table-bordered table-striped display" style=" width:100%">
+        <thead>
+            <tr>
+                <th>S/No</th>
+                <th>User id</th>
+            </tr>
+        </thead>
+
+        <tfoot>
+            <tr>
+              <th>S/No</th>
+              <th>User id</th>
+            </tr>
+        </tfoot>
+    </table>
+    	</div>
+
+
+
+                </div>
+                <!--Grid column-->
+
+            </div>
+            <!--Grid row-->
+
+
+
+
+
+        </section>
+        <!--Section: Cards-->
+
+
+
+			</div>
+	</main>
+	<!--Main layout-->
+
+
+  <script type="text/javascript" language="javascript">
+      $(document).ready(function() {
+
+          $('#user_info').DataTable({
+              "processing": true,
+              "serverSide": true,
+              "ajax": {
+                  url: "backend/fetch.php",
+                  type: "POST"
+              },
+              dom: 'lBfrtip',
+              buttons: [
+                  'excel', 'csv', 'pdf', 'copy', 'print'
+              ],
+              "lengthMenu": [
+                  [10, 25, 50, -1],
+                  [10, 25, 50, "All"]
+              ]
+          });
+
+      });
+  </script>
+
+
+
+	<script>
+
+	var app = angular.module('crudApp', ['datatables']);
+	app.controller('crudController', function($scope, $http){
+
+		$scope.success = false;
+
+		$scope.error = false;
+
+
+
+		$scope.fetchData = function(){
+			$http.get('backend/fetch_data.php').success(function(data){
+				$scope.namesData = data;
+			});
+		};
+
+		// $scope.openModal = function(){
+		// 	var modal_popup = angular.element('#crudmodal');
+		// 	modal_popup.modal('show');
+		// };
+		//
+		// $scope.closeModal = function(){
+		// 	var modal_popup = angular.element('#crudmodal');
+		// 	modal_popup.modal('hide');
+		// };
+
+		$scope.addData = function(){
+			$scope.modalTitle = 'Add Data';
+			$scope.submit_button = 'Insert';
+			$scope.openModal();
+		};
+
+		$scope.submitForm = function(){
+      	$scope.submit_button = 'Insert';
+			$http({
+				method:"POST",
+				url:"backend/index.php",
+  			data:{'qrcode':$scope.first_name, 'action':$scope.submit_button}
+				// data:{'first_name':$scope.first_name, 'last_name':$scope.last_name, 'action':$scope.submit_button, 'id':$scope.hidden_id}
+			}).success(function(data){
+        	// $scope.fetchData();
+          // console.log(data);
+				if(data.error != '')
+				{
+					$scope.success = false;
+					$scope.error = true;
+					$scope.errorMessage = data.error;
+
+				}
+				else
+				{
+					$scope.success = true;
+					$scope.error = false;
+					$scope.successMessage = data.message;
+					$scope.form_data = {};
+					$scope.fetchData();
+          // console.log(data);
+				}
+			});
+		};
+
+		// $scope.fetchSingleData = function(id){
+		// 	$http({
+		// 		method:"POST",
+		// 		url:"insert.php",
+		// 		data:{'id':id, 'action':'fetch_single_data'}
+		// 	}).success(function(data){
+		// 		$scope.first_name = data.first_name;
+		// 		$scope.last_name = data.last_name;
+		// 		$scope.hidden_id = id;
+		// 		$scope.modalTitle = 'Edit Data';
+		// 		$scope.submit_button = 'Edit';
+		// 		$scope.openModal();
+		// 	});
+		// };
+
+		// $scope.deleteData = function(id){
+		// 	if(confirm("Are you sure you want to remove it?"))
+		// 	{
+		// 		$http({
+		// 			method:"POST",
+		// 			url:"insert.php",
+		// 			data:{'id':id, 'action':'Delete'}
+		// 		}).success(function(data){
+		// 			$scope.success = true;
+		// 			$scope.error = false;
+		// 			$scope.successMessage = data.message;
+		// 			$scope.fetchData();
+		// 		});
+		// 	}
+		// };
+
+	});
+</script>
+<script>
+$(document).ready(function() {
+    $('#example').DataTable( {
+        dom: 'Bfrtip',
+        buttons: [
+            'copyHtml5',
+            'excelHtml5',
+            'csvHtml5',
+            'pdfHtml5','print'
+        ]
+    } );
+} );
+</script>
+
+</body>
+
+</html>
