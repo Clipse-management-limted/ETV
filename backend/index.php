@@ -14,7 +14,7 @@ $first_name = '';
 
 if($form_data->action == 'fetch_single_data')
 {
-	$query = "SELECT * FROM tbl_sample WHERE id='".$form_data->id."'";
+	$query = "SELECT * FROM ETV WHERE id='".$form_data->id."'";
 	$statement = $connect->prepare($query);
 	$statement->execute();
 	$result = $statement->fetchAll();
@@ -27,7 +27,7 @@ if($form_data->action == 'fetch_single_data')
 elseif($form_data->action == "Delete")
 {
 	$query = "
-	DELETE FROM tbl_sample WHERE id='".$form_data->id."'
+	DELETE FROM ETV WHERE id='".$form_data->id."'
 	";
 	$statement = $connect->prepare($query);
 	if($statement->execute())
@@ -59,7 +59,7 @@ else
 	{
 		if($form_data->action == 'Insert')
 		{
-      $query = "SELECT * FROM users WHERE qr_code='".$form_data->qrcode."'";
+      $query = "SELECT * FROM ETV WHERE qr_code='".$form_data->qrcode."'";
       $statement = $connect->prepare($query);
       $statement->execute();
       if ($statement->rowCount() > 0) {
@@ -70,7 +70,7 @@ else
           // ':last_name'		=>	$last_name
         );
         $query = "
-        INSERT INTO users
+        INSERT INTO ETV
           (qr_code) VALUES
           (:qr_code)
         ";
